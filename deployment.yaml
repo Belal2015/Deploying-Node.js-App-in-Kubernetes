@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-express-app-deploy
+  labels:
+    app: node-express-app-pod
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: node-express-app-pod
+  template:
+    metadata:
+      labels:
+        app: node-express-app-pod
+    spec:
+      containers:
+      - name: node-express-app-container
+        image: node-express-app:1.0.0
+        ports:
+        - containerPort: 3000

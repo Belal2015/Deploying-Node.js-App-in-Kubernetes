@@ -1,0 +1,17 @@
+{
+  "name": "deploying-node.js-app-in-kubernetes",
+  "version": "1.0.0",
+  "description": "A simple Node.js Express application deployed to Kubernetes",
+  "main": "index.mjs",
+  "type": "module",
+  "scripts": {
+    "start": "node index.mjs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
