@@ -1,13 +1,13 @@
-FROM node:alpine
+# Stage 1: Build
+FROM node:18 as build
 
 WORKDIR /app
-
-EXPOSE 3000
-
-COPY package.json package-lock.json ./
-
+COPY package*.json ./
 RUN npm install
-
-COPY . ./
-
-CMD ["npm", "start"]
+COPY . .
+RUN npm run build
+# Stage 2: Production
+FROM nginx:alpine
+COPY --from=build /app/dist /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]  
