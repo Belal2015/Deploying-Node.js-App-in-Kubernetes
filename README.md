@@ -72,6 +72,8 @@ Kubernetes Cluster
 - **Deployment**: 5 pod replicas for high availability
 - **Service**: ClusterIP with load balancing
 
+![Architecture Diagram](assats/bf059c8f-ddaf-49b7-931e-44c34f3d2fa7.png)
+
 ## 🔌 Application Endpoints
 
 | Endpoint | Method | Description |
